@@ -6,8 +6,7 @@ before_install:
   - docker build -t maciejrataj88/docker-react -f Dockerfile.dev . 
 
 script:
-  - docker run maciejrataj88/docker-react npm run test -- --coverage
-  - YARN_GPG=no
+  - docker run -e CI=true maciejrataj88/docker-react npm run test
 
 
   
